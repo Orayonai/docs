@@ -1,0 +1,47 @@
+---
+title: 'Imagens'
+description: 'Como adicionar imagens à documentação'
+---
+
+## Sintaxe básica
+
+```markdown
+![Descrição da imagem](/images/exemplo.png)
+```
+
+## Imagens com tema
+
+Mostre imagens diferentes para modo claro/escuro:
+
+```html
+<img
+  className="block dark:hidden"
+  src="/images/light-mode.png"
+  alt="Imagem modo claro"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/dark-mode.png"
+  alt="Imagem modo escuro"
+/>
+```
+
+## Frame
+
+Adicione uma borda elegante:
+
+```html
+<Frame>
+  <img src="/images/screenshot.png" alt="Screenshot" />
+</Frame>
+```
+
+## Dimensões
+
+```html
+<img src="/images/logo.png" width="200" alt="Logo" />
+```
+
+## Localização
+
+Coloque imagens na pasta `/images` do projeto.

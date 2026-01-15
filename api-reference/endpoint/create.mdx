@@ -1,0 +1,63 @@
+---
+title: 'Criar mensagem'
+api: 'POST /v1/messages'
+description: 'Envia uma nova mensagem'
+---
+
+## Body
+
+<ParamField body="to" type="string" required>
+  Número de destino no formato internacional (+5511999999999)
+</ParamField>
+
+<ParamField body="content" type="string" required>
+  Conteúdo da mensagem (máx. 4096 caracteres)
+</ParamField>
+
+<ParamField body="type" type="string" default="text">
+  Tipo: `text`, `image`, `document`, `audio`
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Dados adicionais para referência
+</ParamField>
+
+## Exemplo
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST https://api.orayon.ai/v1/messages \
+  -H "Authorization: Bearer SEU_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "to": "+5511999999999",
+    "content": "Olá! Como posso ajudar?",
+    "type": "text"
+  }'
+```
+
+```javascript Node.js
+const message = await orayon.messages.create({
+  to: '+5511999999999',
+  content: 'Olá! Como posso ajudar?',
+  type: 'text'
+});
+```
+
+</CodeGroup>
+
+## Resposta
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "msg_456",
+    "to": "+5511999999999",
+    "content": "Olá! Como posso ajudar?",
+    "status": "pending",
+    "created_at": "2025-01-15T10:35:00Z"
+  }
+}
+```

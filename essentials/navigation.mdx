@@ -1,0 +1,52 @@
+---
+title: 'Navegação'
+description: 'Configure a estrutura de navegação da documentação'
+---
+
+## Estrutura de navegação
+
+A navegação é configurada no `docs.json`:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guias",
+        "groups": [
+          {
+            "group": "Começando",
+            "pages": ["index", "quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Tabs
+
+Organize conteúdo em abas para separar guias de referência da API.
+
+## Groups
+
+Agrupe páginas relacionadas para facilitar a navegação.
+
+## Anchors
+
+Links globais que aparecem em todas as páginas:
+
+```json
+{
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Site",
+        "href": "https://orayon.ai",
+        "icon": "globe"
+      }
+    ]
+  }
+}
+```

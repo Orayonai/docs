@@ -1,0 +1,40 @@
+---
+title: 'Claude Code'
+description: 'Integração com Claude Code CLI'
+---
+
+## Sobre o Claude Code
+
+Claude Code é a CLI oficial da Anthropic para desenvolvimento assistido por IA.
+
+## Configuração MCP
+
+Adicione ao seu `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "orayon-docs": {
+      "type": "http",
+      "url": "https://docs.orayon.com.br/mcp",
+      "headers": {
+        "Authorization": "Bearer SUA_CHAVE"
+      }
+    }
+  }
+}
+```
+
+## Uso
+
+Após configurar, o Claude Code terá acesso à documentação Orayon:
+
+```
+claude> Como integro webhooks da Orayon?
+```
+
+## Comandos úteis
+
+- `/help` - Ver ajuda
+- `/clear` - Limpar conversa
+- `@docs` - Referenciar documentação

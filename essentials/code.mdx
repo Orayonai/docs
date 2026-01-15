@@ -1,0 +1,48 @@
+---
+title: 'Blocos de código'
+description: 'Como adicionar código com syntax highlighting'
+---
+
+## Código inline
+
+Use crases para código inline: `const x = 1`
+
+## Blocos de código
+
+Use três crases com o nome da linguagem:
+
+```javascript
+function hello() {
+  console.log("Olá, Orayon!");
+}
+```
+
+## Linguagens suportadas
+
+- `javascript` / `js`
+- `typescript` / `ts`
+- `python`
+- `bash` / `shell`
+- `json`
+- `html`
+- `css`
+- `sql`
+
+## Destacar linhas
+
+```javascript {2,4}
+function exemplo() {
+  // Esta linha está destacada
+  const a = 1;
+  // Esta também
+  return a;
+}
+```
+
+## Título do código
+
+```javascript title="exemplo.js"
+export const config = {
+  apiKey: "sua-chave"
+};
+```

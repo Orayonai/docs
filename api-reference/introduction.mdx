@@ -1,0 +1,61 @@
+---
+title: 'Introdução à API'
+description: 'Visão geral da API REST Orayon'
+---
+
+## Base URL
+
+```
+https://api.orayon.ai/v1
+```
+
+## Autenticação
+
+Todas as requisições devem incluir o header de autenticação:
+
+```bash
+Authorization: Bearer SEU_TOKEN_API
+```
+
+<Note>
+  Obtenha sua API Key no painel em **Configurações → API Keys**
+</Note>
+
+## Formato de resposta
+
+Todas as respostas são em JSON:
+
+```json
+{
+  "success": true,
+  "data": { ... },
+  "error": null
+}
+```
+
+## Códigos de status
+
+| Código | Descrição |
+|--------|-----------|
+| 200 | Sucesso |
+| 400 | Requisição inválida |
+| 401 | Não autorizado |
+| 404 | Não encontrado |
+| 429 | Rate limit excedido |
+| 500 | Erro interno |
+
+## Rate Limiting
+
+- **Limite**: 100 requisições por minuto
+- **Header**: `X-RateLimit-Remaining`
+
+## SDKs oficiais
+
+<CardGroup cols={2}>
+  <Card title="Node.js" icon="node-js" href="https://npmjs.com/package/@orayon/sdk">
+    npm install @orayon/sdk
+  </Card>
+  <Card title="Python" icon="python" href="https://pypi.org/project/orayon/">
+    pip install orayon
+  </Card>
+</CardGroup>

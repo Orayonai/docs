@@ -1,0 +1,72 @@
+---
+title: 'Webhooks'
+api: 'POST /v1/webhooks'
+description: 'Configure webhooks para receber eventos em tempo real'
+---
+
+## Criar webhook
+
+<ParamField body="url" type="string" required>
+  URL para receber os eventos (HTTPS obrigatório)
+</ParamField>
+
+<ParamField body="events" type="array" required>
+  Lista de eventos para escutar
+</ParamField>
+
+<ParamField body="secret" type="string">
+  Chave secreta para validar assinaturas
+</ParamField>
+
+## Eventos disponíveis
+
+| Evento | Descrição |
+|--------|-----------|
+| `message.received` | Nova mensagem recebida |
+| `message.sent` | Mensagem enviada |
+| `message.delivered` | Mensagem entregue |
+| `message.read` | Mensagem lida |
+| `message.failed` | Falha no envio |
+
+## Exemplo de criação
+
+```bash
+curl -X POST https://api.orayon.ai/v1/webhooks \
+  -H "Authorization: Bearer SEU_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://seusite.com/webhook",
+    "events": ["message.received", "message.sent"],
+    "secret": "sua_chave_secreta"
+  }'
+```
+
+## Payload recebido
+
+```json
+{
+  "event": "message.received",
+  "timestamp": "2025-01-15T10:45:00Z",
+  "data": {
+    "id": "msg_789",
+    "from": "+5511888888888",
+    "content": "Olá!",
+    "type": "text"
+  }
+}
+```
+
+## Validação de assinatura
+
+```javascript
+const crypto = require('crypto');
+
+function validateWebhook(payload, signature, secret) {
+  const hash = crypto
+    .createHmac('sha256', secret)
+    .update(JSON.stringify(payload))
+    .digest('hex');
+
+  return hash === signature;
+}
+```

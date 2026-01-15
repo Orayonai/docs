@@ -1,0 +1,43 @@
+---
+title: 'Deletar mensagem'
+api: 'DELETE /v1/messages/{id}'
+description: 'Remove uma mensagem do sistema'
+---
+
+## Parâmetros
+
+<ParamField path="id" type="string" required>
+  ID único da mensagem a ser deletada
+</ParamField>
+
+## Exemplo
+
+<CodeGroup>
+
+```bash cURL
+curl -X DELETE https://api.orayon.ai/v1/messages/msg_123 \
+  -H "Authorization: Bearer SEU_TOKEN"
+```
+
+```javascript Node.js
+await orayon.messages.delete('msg_123');
+```
+
+</CodeGroup>
+
+## Resposta
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "msg_123",
+    "deleted": true,
+    "deleted_at": "2025-01-15T10:40:00Z"
+  }
+}
+```
+
+<Warning>
+  Esta ação é irreversível. A mensagem será permanentemente removida.
+</Warning>

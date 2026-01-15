@@ -1,0 +1,108 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Orayon",
+  "colors": {
+    "primary": "#5636d1",
+    "light": "#7C5CE7",
+    "dark": "#4527A0"
+  },
+  "favicon": "https://orayon.ai/wp-content/uploads/2025/12/logo_3d_azul-150x150.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guias",
+        "groups": [
+          {
+            "group": "Começando",
+            "pages": [
+              "index",
+              "quickstart",
+              "development"
+            ]
+          },
+          {
+            "group": "Personalização",
+            "pages": [
+              "essentials/settings",
+              "essentials/navigation"
+            ]
+          },
+          {
+            "group": "Escrevendo conteúdo",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+          },
+          {
+            "group": "Ferramentas IA",
+            "pages": [
+              "ai-tools/cursor",
+              "ai-tools/claude-code",
+              "ai-tools/windsurf"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Documentação API",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Site",
+          "href": "https://orayon.ai",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://orayon.ai/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Suporte",
+        "href": "mailto:contato@orayon.com.br"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Começar",
+      "href": "https://orayon.ai"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/orayon",
+      "instagram": "https://instagram.com/orayon"
+    }
+  }
+}

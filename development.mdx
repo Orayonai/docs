@@ -1,0 +1,63 @@
+---
+title: 'Desenvolvimento'
+description: 'Guia para desenvolvedores integrando com a Orayon'
+---
+
+## Ambiente de desenvolvimento
+
+### Requisitos
+
+- Node.js 18+
+- NPM ou Yarn
+- Conta Orayon com API Key
+
+### Instalação do SDK
+
+```bash
+npm install @orayon/sdk
+```
+
+### Configuração
+
+```javascript
+import { Orayon } from '@orayon/sdk';
+
+const client = new Orayon({
+  apiKey: process.env.ORAYON_API_KEY
+});
+
+// Enviar mensagem
+await client.messages.send({
+  to: "+5511999999999",
+  content: "Olá! Esta é uma mensagem automatizada."
+});
+```
+
+## Webhooks
+
+Configure webhooks para receber eventos em tempo real:
+
+```javascript
+// Endpoint para receber webhooks
+app.post('/webhook/orayon', (req, res) => {
+  const { event, data } = req.body;
+
+  switch(event) {
+    case 'message.received':
+      handleIncomingMessage(data);
+      break;
+    case 'message.sent':
+      handleMessageSent(data);
+      break;
+  }
+
+  res.status(200).send('OK');
+});
+```
+
+## Ambientes
+
+| Ambiente | URL Base |
+|----------|----------|
+| Produção | `https://api.orayon.ai` |
+| Sandbox | `https://sandbox.orayon.ai` |

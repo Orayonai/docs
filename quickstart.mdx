@@ -1,0 +1,45 @@
+---
+title: 'Quickstart'
+description: 'Comece a usar a Orayon em menos de 5 minutos'
+---
+
+## Configuração inicial
+
+<Steps>
+  <Step title="Crie sua conta">
+    Acesse [orayon.ai](https://orayon.ai) e crie sua conta gratuita.
+  </Step>
+  <Step title="Configure seu workspace">
+    Após o login, crie seu primeiro workspace e configure as integrações desejadas.
+  </Step>
+  <Step title="Conecte seus canais">
+    Integre WhatsApp, email ou outros canais de comunicação.
+  </Step>
+  <Step title="Crie seu primeiro fluxo">
+    Use nosso editor visual para criar automações sem código.
+  </Step>
+</Steps>
+
+## Primeira automação
+
+```javascript
+// Exemplo de webhook para receber mensagens
+const webhook = {
+  url: "https://api.orayon.ai/webhook",
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer SEU_TOKEN"
+  }
+}
+```
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Configurações" icon="gear" href="/essentials/settings">
+    Personalize seu workspace
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference/introduction">
+    Explore endpoints disponíveis
+  </Card>
+</CardGroup>
